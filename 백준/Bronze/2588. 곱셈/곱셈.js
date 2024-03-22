@@ -1,4 +1,4 @@
-const input = require("fs").readFileSync("/dev/stdin").toString().split('\n').map(Number);
+const input = require('fs').readFileSync('/dev/stdin').toString().split('\n').map(Number);
 
 const oneNum=input[1]%10;
 const tenNum=Math.floor((input[1]%100)/10);
