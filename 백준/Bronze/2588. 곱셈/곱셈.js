@@ -1,13 +1,10 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+const input = require("fs").readFileSync("/dev/stdin").toString().split('\n').map(Number);
 
-let a = input[0].split('');
-let b = input[1].split('');
+const oneNum=input[1]%10;
+const tenNum=Math.floor((input[1]%100)/10);
+const hundredNum=Math.floor(input[1]/100);
 
-let one = Number(input[0]) * Number(b[2]);
-let two = Number(input[0]) * Number(b[1]);
-let three = Number(input[0]) * Number(b[0]);
-
-console.log(one);
-console.log(two);
-console.log(three);
-console.log((three*100) + (two * 10) + one);
+console.log(input[0]*oneNum);
+console.log(input[0]*tenNum);
+console.log(input[0]*hundredNum);
+console.log(input[0]*input[1]);
