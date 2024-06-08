@@ -1,18 +1,21 @@
+import java.io.*;
 import java.util.*;
 
 class Main {
-    public static void main(String args[]) {
-        Scanner in = new Scanner(System.in);
+    public static void main(String args[]) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int[] months = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        String[] days = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
         
-        int month = in.nextInt();
-        int day = in.nextInt();
-        int[] dayInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        String[] dayOfTheMonth = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int month = Integer.parseInt(st.nextToken());
+        int day = Integer.parseInt(st.nextToken());
         
-        int totalDays = day;
+        
+        int result = day;
         for (int i = 0; i < month - 1; i++) {
-            totalDays += dayInMonth[i];
+            result += months[i];
         }
-        System.out.println(dayOfTheMonth[totalDays % 7]);
+        System.out.println(days[result % 7]);
     }
 }
