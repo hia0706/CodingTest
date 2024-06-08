@@ -1,14 +1,15 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 class Main {
-    public static void main(String args[]) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        String str = "";
+    public static void main(String args[]) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        for (int i = 1; i <= n/4; i++) {
-            str += "long ";
+        int n = Integer.parseInt(br.readLine());
+        for (int i = 0; i < n/4; i++) {
+            System.out.print("long ");
         }
-        System.out.println(str + "int");
+        System.out.println("int");
     }
 }
