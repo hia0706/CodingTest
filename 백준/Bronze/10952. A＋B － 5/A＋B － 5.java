@@ -1,23 +1,24 @@
 import java.io.*;
+import java.util.*;
 
 class Main{
-    public static void main(String args[]) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        
+    public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static StringBuilder sb = new StringBuilder();
+    public static StringTokenizer st;
+    public static int a,b;
+    public static String str;
+
+    public static void main(String[] args) throws IOException {
         while (true) {
-            String str = br.readLine();
-            String[] numbers = str.split(" ");
-            int a = Integer.parseInt(numbers[0]);
-            int b = Integer.parseInt(numbers[1]);
-            
+            st = new StringTokenizer(br.readLine(), " ");
+            a = Integer.parseInt(st.nextToken());
+            b = Integer.parseInt(st.nextToken());
+
             if (a == 0 && b == 0) {
                 break;
             }
-            bw.write((a+b) + "\n");
+            sb.append((a + b)).append("\n");
         }
-        br.close();
-        bw.flush();
-        bw.close();
+        System.out.println(sb);
     }
 }
