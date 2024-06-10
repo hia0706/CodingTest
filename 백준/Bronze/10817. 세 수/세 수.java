@@ -1,16 +1,18 @@
+import java.io.*;
 import java.util.*;
 
 class Main {
-    public static void main(String args[]) {
-        Scanner in = new Scanner(System.in);
+    public static void main(String args[]) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
         int[] numbers = new int[3];
-        for (int i = 0; i < 3; i++) {
-            numbers[i] = in.nextInt();
-        }
-        in.close();
         
+        for (int i = 0; i < numbers.length; i++) {
+            if (st.hasMoreTokens()) {
+                numbers[i] = Integer.parseInt(st.nextToken());
+            }
+        }
         Arrays.sort(numbers);
-        int mid = numbers[1];
-        System.out.println(mid);
+        System.out.print(numbers[1]);
     }
 }
