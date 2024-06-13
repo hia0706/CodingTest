@@ -1,20 +1,22 @@
 import java.io.*;
+import java.util.*;
 
 class Main {
-    public static void main(String args[]) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        
-        int n = Integer.parseInt(br.readLine());
-        
-        for (int i = 0; i < n; i++) {
-            String str = br.readLine();
-            int a = Integer.parseInt(str.split(" ")[0]);
-            int b = Integer.parseInt(str.split(" ")[1]);
-            bw.write(a + b + "\n");
+    public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static StringBuilder sb = new StringBuilder();
+    public static StringTokenizer st;
+    public static int a,b;
+
+    public static void main(String[] args) throws IOException {
+        int t = Integer.parseInt(br.readLine());
+
+        for (int i = 0; i < t; i++) {
+        st = new StringTokenizer(br.readLine(), " ");
+            a = Integer.parseInt(st.nextToken());
+            b = Integer.parseInt(st.nextToken());
+            sb.append(a + b).append("\n");
         }
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.println(sb);
     }
 }
