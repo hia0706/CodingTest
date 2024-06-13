@@ -1,21 +1,27 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 class Main {
-    public static void main(String args[]) {
-        Scanner in = new Scanner(System.in);
-        int x = in.nextInt();
-        int n = in.nextInt();
-        int total = 0;
-        
+    public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static StringBuilder sb = new StringBuilder();
+    public static StringTokenizer st;
+
+    public static void main(String[] args) throws IOException {
+        int x = Integer.parseInt(br.readLine());
+        int n = Integer.parseInt(br.readLine());
+
+        int sum = 0;
         for (int i = 0; i < n; i++) {
-            int a = in.nextInt();
-            int b = in.nextInt();
-            total += a * b;
+            st = new StringTokenizer(br.readLine(), " ");
+            int p = Integer.parseInt(st.nextToken());
+            int c = Integer.parseInt(st.nextToken());
+            sum += p * c;
         }
-        if (total == x) {
-            System.out.println("Yes");
+        if (sum != x) {
+            sb.append("No");
         } else {
-            System.out.println("No");
+            sb.append("Yes");
         }
+        System.out.println(sb);
     }
- }
+}
