@@ -2,26 +2,24 @@ import java.io.*;
 import java.util.*;
 
 class Main {
-    public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    public static StringBuilder sb = new StringBuilder();
-    public static StringTokenizer st;
-    
     public static void main(String args[]) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
         int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
         st = new StringTokenizer(br.readLine(), " ");
-        
         int min = 1000000;
         int max = -1000000;
-        while (st.hasMoreTokens()) {
-            int num = Integer.parseInt(st.nextToken());
-            if (num < min) {
-                min = num;
+        
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+            if (arr[i] < min) {
+                min = arr[i];
             }
-            if (num > max) {
-                max = num;
+            if (arr[i] > max) {
+                max = arr[i];
             }
         }
-        br.close();
-        System.out.println(min + " " + max);
+        System.out.print(min + " " + max);
     }
 }
